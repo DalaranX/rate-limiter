@@ -1,5 +1,5 @@
-var redis = require('redis')
-var moment = require('moment')
+import redis from 'redis'
+import moment from 'moment'
 
 var Client = function(opt) {
   const {host, port, options} = opt.redis
@@ -38,7 +38,7 @@ var Limiter = function(opt) {
   }
 }
 
-export default function(opt) {
+export  function init(opt) {
   return (req, res, next) => {
     var client = Client(opt.redis)
     var { key, rate } = opt.rule[`${req.route.method} ${req.route.path}`]
