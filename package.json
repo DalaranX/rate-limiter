@@ -1,10 +1,12 @@
 {
-  "name": "rate-limiter",
-  "version": "1.0.0",
+  "name": "barrique",
+  "version": "1.0.2",
   "description": "node rate limiter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build --presets es2015 --plugins transform-es2015-modules-commonjs",
+    "watch": "babel src -d build --presets es2015 --plugins transform-es2015-modules-commonjs --watch"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.3.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
     "babel-preset-es2015": "*"
+  },
+  "babel": {
+    "presets": ["es2015"],
+    "plugins": ["transform-es2015-modules-commonjs"]
   }
 }
